@@ -1,6 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AxiosError } from "axios";
-import { useEffect, useState } from "react";
 
 import Home from "./pages/Home";
 import Search from "./pages/Search";
