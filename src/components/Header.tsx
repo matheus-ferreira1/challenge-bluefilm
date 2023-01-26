@@ -1,5 +1,6 @@
 import { FC, FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FiSearch } from "react-icons/fi";
 
 const Header: FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,7 +12,7 @@ const Header: FC = () => {
   };
 
   return (
-    <header className="flex justify-between items-center py-4 px-2">
+    <header className="flex justify-between items-center py-4 px-8 bg-[#182e4a]">
       <Link to="/home">
         <h1>BlueFilms</h1>
       </Link>
@@ -21,7 +22,9 @@ const Header: FC = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button type="submit">Pesquisar</button>
+        <button type="submit">
+          <FiSearch />
+        </button>
       </form>
     </header>
   );
