@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { MovieDataTypes } from "../utils/types";
 
 import { AiFillStar } from "react-icons/ai";
+import Tmdb from "../assets/tmdb.svg";
 
 const MovieDetail: FC = () => {
   const [loading, setLoading] = useState(false);
@@ -49,9 +50,10 @@ const MovieDetail: FC = () => {
             <h4 className="font-semibold mt-2 text-xl flex items-center gap-2">
               <AiFillStar size={24} className="text-[#ffb800]" />{" "}
               {movieData?.vote_average.toFixed(1)}/10{" "}
-              <span className="text-black bg-[#ffb800] px-3 rounded-md">
+              <img src={Tmdb} alt="TMDB Logo" className="w-14" />
+              {/* <span className="text-black bg-[#ffb800] px-3 rounded-md">
                 IMDb
-              </span>
+              </span> */}
             </h4>
           </div>
         </div>

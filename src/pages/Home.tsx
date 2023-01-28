@@ -7,7 +7,6 @@ import * as Api from "../utils/api";
 import Banner from "../components/Banner";
 import ListFilms from "../components/ListFilms";
 import ListActors from "../components/ListActors";
-import BannerNew from "../components/BannerNew";
 
 const Home: FC = () => {
   const [loading, setLoading] = useState(false);
@@ -47,7 +46,6 @@ const Home: FC = () => {
   return (
     <main>
       <Banner bannerMovies={bannerMovies} />
-      {/* <BannerNew bannerMovies={bannerMovies} /> */}
       <ListFilms />
       <ListActors />
     </main>

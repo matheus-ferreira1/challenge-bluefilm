@@ -1,0 +1,20 @@
+.slick-prev {
+  left: 0;
+  z-index: 10;
+  color: #000;
+}
+.slick-next {
+  right: 0;
+  z-index: 10;
+  color: #000;
+}
+.slick-prev::before,
+.slick-next::before {
+  color: #000;
+}
+.slick-trending .slick-prev {
+  left: 25px;
+}
+.slick-trending .slick-next {
+  right: 25px;
+}
