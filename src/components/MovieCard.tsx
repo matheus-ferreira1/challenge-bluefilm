@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import { MovieDataTypes } from "../utils/types";
 
@@ -8,7 +8,7 @@ interface PropsTypes {
 
 const MovieCard: FC<PropsTypes> = ({ movie }) => {
   return (
-    <Link to={""}>
+    <Link to={`/movieDetail/${movie.id}`}>
       <article className="bg-[#3f4756] rounded-md overflow-hidden w-full flex flex-col">
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

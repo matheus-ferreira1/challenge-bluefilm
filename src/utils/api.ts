@@ -60,9 +60,15 @@ export const getMovieSearch = async (
   }
 };
 
-export const getMovieById = async (id: number): Promise<MovieDataTypes> => {
+export const getMovieById = async (id: string): Promise<MovieDataTypes> => {
   try {
-    const { data } = await api.get(`movie/${id}`);
+    // const { data } = await api.get(`movie/${id}`);
+    // return data.results;
+    const { data } = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${
+        import.meta.env.VITE_TMDB_API_KEY
+      }&language=pt-BR`
+    );
     return data.results;
   } catch (error) {
     throw error;
