@@ -1,13 +1,17 @@
 import axios from "axios";
 import { BannerMovieTypes, ActorTypes, MovieDataTypes } from "./types";
 
+export const api = axios.create({
+  baseURL: "https://api.themoviedb.org/3/",
+  params: {
+    api_key: import.meta.env.VITE_TMDB_API_KEY,
+    language: "pt-BR",
+  },
+});
+
 export const getTrendingMovies = async (): Promise<BannerMovieTypes[]> => {
   try {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/movie/week?language=pt-BR&api_key=${
-        import.meta.env.VITE_TMDB_API_KEY
-      }`
-    );
+    const { data } = await api.get("trending/movie/week");
     return data.results.slice(0, 10);
   } catch (error) {
     throw error;
@@ -16,11 +20,7 @@ export const getTrendingMovies = async (): Promise<BannerMovieTypes[]> => {
 
 export const getPopularMovies = async (): Promise<MovieDataTypes[]> => {
   try {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/movie/popular?language=pt-BR&api_key=${
-        import.meta.env.VITE_TMDB_API_KEY
-      }`
-    );
+    const { data } = await api.get("movie/popular");
     return data.results;
   } catch (error) {
     throw error;
@@ -29,23 +29,7 @@ export const getPopularMovies = async (): Promise<MovieDataTypes[]> => {
 
 export const getComingSoonMovies = async (): Promise<MovieDataTypes[]> => {
   try {
-    const brazilDate = new Date().toLocaleString("pt-BR", {
-      timeZone: "America/Sao_Paulo",
-    });
-    const parsedDate = brazilDate.split(" ")[0].split("/");
-
-    const day = parsedDate[0];
-    const month = parsedDate[1];
-    const year = parsedDate[2];
-
-    const initialDate = `${year}-${month}-${day}`;
-    const finalDate = `${parseInt(year) + 1}-${month}-${day}`;
-
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie?language=pt-BR&api_key=${
-        import.meta.env.VITE_TMDB_API_KEY
-      }&page=1&region=BR&sort_by=primary_release_date.asc&include_adult=false&primary_release_date.gte=${initialDate}&primary_release_date.lte=${finalDate}&with_release_type=2|3`
-    );
+    const { data } = await api.get("movie/upcoming");
     return data.results;
   } catch (error) {
     throw error;
@@ -54,11 +38,31 @@ export const getComingSoonMovies = async (): Promise<MovieDataTypes[]> => {
 
 export const getPopularActors = async (): Promise<ActorTypes[]> => {
   try {
+    const { data } = await api.get("person/popular");
+    return data.results;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getMovieSearch = async (
+  searchInput: string
+): Promise<MovieDataTypes> => {
+  try {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/person/popular?language=pt-BR&api_key=${
+      `https://api.themoviedb.org/3/search/movie?language=pt-BR&api_key=${
         import.meta.env.VITE_TMDB_API_KEY
-      }`
+      }&query=${searchInput}`
     );
+    return data.results;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getMovieById = async (id: number): Promise<MovieDataTypes> => {
+  try {
+    const { data } = await api.get(`movie/${id}`);
     return data.results;
   } catch (error) {
     throw error;
