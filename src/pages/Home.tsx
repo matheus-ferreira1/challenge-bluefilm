@@ -57,7 +57,7 @@ const Home: FC = () => {
         comingSoon={comingSoon}
       />
 
-      <ListActors />
+      <ListActors popularActors={popularActors} />
     </main>
   );
 };

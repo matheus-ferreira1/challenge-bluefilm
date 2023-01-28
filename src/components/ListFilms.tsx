@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { MovieDataTypes } from "../utils/types";
-import MovieCard from "./MovieCard";
 
 interface ListFilmsProps {
   popularMovies?: MovieDataTypes[];
