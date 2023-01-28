@@ -55,8 +55,12 @@ const MovieDetail: FC = () => {
             </h4>
           </div>
         </div>
-        <h1 className="font-bold text-3xl my-6">Visao geral</h1>
-        <p className="text-lg w-[80%]">{movieData?.overview}</p>
+        <h1 className="font-bold text-base sm:text-xl md:text-3xl my-6">
+          Visao geral
+        </h1>
+        <p className="text-sm sm:text-base md:text-lg w-[80%]">
+          {movieData?.overview}
+        </p>
       </div>
     </section>
   );
