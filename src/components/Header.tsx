@@ -1,6 +1,6 @@
 import { FC, FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FiSearch } from "react-icons/fi";
+import { IoIosSearch } from "react-icons/io";
 
 const Header: FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -9,21 +9,27 @@ const Header: FC = () => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     navigate(`/search/${searchTerm}`);
+    setSearchTerm("");
   };
 
   return (
-    <header className="flex justify-between items-center py-4 px-8 bg-[#182e4a]">
-      <Link to="/home">
-        <h1>BlueFilms</h1>
-      </Link>
-      <form onSubmit={handleSubmit}>
+    <header className="flex justify-between items-center py-3.5 px-4 md:px-16 bg-[#182e4a] text-white">
+      <h1 className="text-lg md:text-3xl font-semibold">
+        <Link to="/home">BlueFilms</Link>
+      </h1>
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-center bg-gray-500/70 py-2 px-4 rounded-md w-3/5 md:w-2/5"
+      >
         <input
+          placeholder="Digite um filme"
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          className="bg-transparent outline-0 w-full"
         />
         <button type="submit">
-          <FiSearch />
+          <IoIosSearch size={25} />
         </button>
       </form>
     </header>
