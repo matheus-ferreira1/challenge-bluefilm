@@ -19,7 +19,7 @@ const TrendingCard: FC<CardProps> = ({ bannerMovie }) => {
   return (
     <article
       style={{
-        backgroundImage: `url(https://image.tmdb.org/t/p/w500${bannerMovie.backdrop_path})`,
+        backgroundImage: `url(https://image.tmdb.org/t/p/original${bannerMovie.backdrop_path})`,
       }}
       className="h-[250px] md:h-[500px] bg-cover bg-center w-screen bg-no-repeat py-3.5 px-4 md:px-16 text-white flex items-end relative"
     >

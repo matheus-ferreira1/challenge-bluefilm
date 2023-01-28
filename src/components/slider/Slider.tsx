@@ -5,8 +5,7 @@ import "./slider.css";
 export const Slider = (props: Settings) => {
   const settings = {
     infinite: true,
-    speed: 3000,
-    arrows: true,
+    speed: 1500,
   };
 
   return (

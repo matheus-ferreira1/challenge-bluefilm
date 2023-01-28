@@ -40,13 +40,23 @@ const Home: FC = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="w-full h-screen full flex justify-center items-center text-white text-3xl bg-[#191b1f]">
+        Carregando...
+      </div>
+    );
   }
 
   return (
     <main>
       <Banner bannerMovies={bannerMovies} />
-      <ListFilms />
+      <ListFilms
+        title="Filmes Populares"
+        loading={loading}
+        popularMovies={popularMovies}
+        comingSoon={comingSoon}
+      />
+
       <ListActors />
     </main>
   );

@@ -32,7 +32,7 @@ const MovieDetail: FC = () => {
   return (
     <section className="flex flex-col">
       <img
-        src={`https://image.tmdb.org/t/p/w500${movieData?.backdrop_path}`}
+        src={`https://image.tmdb.org/t/p/original${movieData?.backdrop_path}`}
         alt={movieData?.title}
         className="w-full sm:h-[244px] md:h-[464px] object-cover"
       />

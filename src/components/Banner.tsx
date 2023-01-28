@@ -21,6 +21,7 @@ const Banner: FC<BannerProps> = ({ bannerMovies }) => {
         fade={true}
         arrows={true}
         autoplay={true}
+        pauseOnHover={false}
       >
         {bannerMovies.map((bannerMovie) => (
           <TrendingCard key={bannerMovie.id} bannerMovie={bannerMovie} />

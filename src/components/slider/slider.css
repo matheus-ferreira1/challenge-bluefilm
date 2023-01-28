@@ -1,12 +1,12 @@
 .slick-prev {
-  left: 0;
+  left: 50;
   z-index: 10;
   color: #000;
 }
 .slick-next {
   right: 0;
   z-index: 10;
-  color: #000;
+  color: red;
 }
 .slick-prev::before,
 .slick-next::before {
