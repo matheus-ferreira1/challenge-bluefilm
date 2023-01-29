@@ -15,7 +15,7 @@ const Header: FC = () => {
   return (
     <header className="flex justify-between items-center py-3.5 px-4 md:px-16 bg-[#182e4a] text-white">
       <h1 className="text-lg md:text-3xl font-semibold hover:text-gray-300 duration-200">
-        <Link to="/home">BlueFilms</Link>
+        <Link to="/">BlueFilms</Link>
       </h1>
       <form
         onSubmit={handleSubmit}
