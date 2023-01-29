@@ -7,7 +7,10 @@ const Footer = () => {
         BlueFilms <span className="font-light">&copy; 2023</span>
       </h1>
       <h3 className="text-gray-300 mt-2 text-sm md:text-base">
-        Desenvolvido por @matheus-ferreira1
+        Desenvolvido por{" "}
+        <a target="_blank" href="https://github.com/matheus-ferreira1">
+          @matheus-ferreira1
+        </a>
       </h3>
     </footer>
   );

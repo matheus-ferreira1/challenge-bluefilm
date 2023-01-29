@@ -29,6 +29,14 @@ const MovieDetail: FC = () => {
       });
   }, [movieId]);
 
+  if (loading) {
+    return (
+      <div className="w-full h-screen full flex justify-center items-center text-white text-3xl bg-[#191b1f]">
+        Carregando...
+      </div>
+    );
+  }
+
   return (
     <section className="flex flex-col">
       <img

@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import { ActorTypes, MovieDataTypes } from "../utils/types";
+import moment from "moment";
 
 interface Props {
   cast: MovieDataTypes[];
@@ -68,12 +69,16 @@ const ActorDetail = () => {
           <h2 className="text-3xl font-bold text-[#ffb800]">
             {actorData?.name}
           </h2>
-          <h4>XX anos</h4>
+          <h4>{moment().diff(actorData?.birthday, "years", false)} anos</h4>
           <h4>{actorData?.place_of_birth}</h4>
         </div>
       </div>
       <h1 className="text-lg md:text-3xl font-semibold my-4">Biografia</h1>
-      <p className="text-justify">{actorData?.biography}</p>
+      <p className="text-justify">
+        {actorData?.biography
+          ? actorData.biography
+          : "Biografia nao encontrada"}
+      </p>
       <div>
         <h1 className="text-lg md:text-3xl font-semibold my-8">Filmografia</h1>
         <div>
