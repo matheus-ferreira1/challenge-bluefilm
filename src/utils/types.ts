@@ -23,4 +23,6 @@ export interface ActorTypes {
   profile_path: string;
   known_for: MovieDataTypes[];
   known_for_department: string;
+  biography: string;
+  place_of_birth: string;
 }

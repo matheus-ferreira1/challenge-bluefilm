@@ -8,7 +8,6 @@ interface PropsTypes {
 
 const ActorCard: FC<PropsTypes> = ({ actor }) => {
   const baseUrl = "https://image.tmdb.org/t/p/w200/";
-  console.log(actor);
 
   return (
     <Link to={`/actorDetail/${actor.id}`}>
