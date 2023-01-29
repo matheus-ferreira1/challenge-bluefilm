@@ -2,7 +2,7 @@
 
 ### 💻 Acesse o [resultado Final](https://challenge-bluefilm.vercel.app)
 
-imagem do projeto
+[![Bluefilm](https://github.com/matheus-ferreira1/challenge-bluefilm/blob/main/bluefilm.png)](https://challenge-bluefilm.vercel.app)
 
 ## Destaques do Projeto:
 
