@@ -70,7 +70,7 @@ const ActorDetail = () => {
             {actorData?.name}
           </h2>
           <h4>{moment().diff(actorData?.birthday, "years", false)} anos</h4>
-          <h4>{actorData?.place_of_birth}</h4>
+          <h4 className="text-base md:text-lg">{actorData?.place_of_birth}</h4>
         </div>
       </div>
       <h1 className="text-lg md:text-3xl font-semibold my-4">Biografia</h1>

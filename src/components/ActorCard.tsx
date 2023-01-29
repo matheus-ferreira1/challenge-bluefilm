@@ -13,7 +13,7 @@ const ActorCard: FC<PropsTypes> = ({ actor }) => {
     <Link to={`/actorDetail/${actor.id}`}>
       <article className="flex flex-col items-center mx-3">
         <img
-          className="rounded-full object-cover h-[120px] w-[120px] sm:h-[200px] sm:w-[200px] md:h-[150px] md:w-[150px]"
+          className="rounded-full object-cover h-[120px] w-[120px] sm:h-[200px] sm:w-[200px] md:h-[150px] md:w-[150px] my-4"
           src={`${baseUrl}/${actor.profile_path}`}
           alt={actor.name}
         />
