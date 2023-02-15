@@ -86,7 +86,9 @@ const ListFilms: FC<ListFilmsProps> = ({
         )}
       </div>
       <div className="upcoming-container mt-10">
-        <h1 className="text-lg md:text-3xl font-semibold mb-4">{title}</h1>
+        <h1 className="text-lg md:text-3xl font-semibold mb-4">
+          Próximos Lançamentos
+        </h1>
         {loading ? (
           <div className="flex justify-center items-center h-full w-full">
             Loading...

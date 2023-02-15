@@ -21,7 +21,7 @@ const TrendingCard: FC<CardProps> = ({ bannerMovie }) => {
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${bannerMovie.backdrop_path})`,
       }}
-      className="h-[250px] md:h-[500px] bg-cover bg-center w-screen bg-no-repeat py-3.5 px-4 md:px-16 text-white flex items-end relative"
+      className="h-[250px] md:h-[700px] lg:h-[calc(screen-16rem)] bg-cover bg-center w-screen bg-no-repeat py-3.5 px-4 md:px-16 text-white flex items-end relative"
     >
       <h4 className="font-semibold mt-2 text-xl flex items-center gap-2 absolute top-5 right-4 sm:right-20">
         <AiFillStar size={24} className="text-[#ffb800]" />{" "}

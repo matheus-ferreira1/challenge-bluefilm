@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="font-inter">
+    <div className="font-inter overflow-hidden">
       <Router>
         <Header />
 
